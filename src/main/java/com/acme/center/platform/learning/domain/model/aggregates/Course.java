@@ -1,5 +1,6 @@
 package com.acme.center.platform.learning.domain.model.aggregates;
 
+import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
 import com.acme.center.platform.learning.domain.model.valueobjects.LearningPath;
 import com.acme.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
@@ -24,6 +25,10 @@ public class Course extends AuditableAbstractAggregateRoot<Course> {
 
     public Course() {
         this(Strings.EMPTY, Strings.EMPTY);
+    }
+
+    public Course(CreateCourseCommand command) {
+        this(command.title(), command.description());
     }
 
     public Course updateInformation(String title, String description) {
