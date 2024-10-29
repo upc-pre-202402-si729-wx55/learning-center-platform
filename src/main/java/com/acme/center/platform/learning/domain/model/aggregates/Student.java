@@ -57,7 +57,7 @@ public class Student extends AuditableAbstractAggregateRoot<Student> {
         return this.performanceMetricSet.totalCompletedCourses();
     }
 
-    public Integer getTotalTutorials() {
-        return this.performanceMetricSet.totalTutorials();
+    public Integer getTotalCompletedTutorials() {
+        return this.performanceMetricSet.totalCompletedTutorials();
     }
 }
