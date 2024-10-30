@@ -1,4 +1,4 @@
-package com.acme.center.platform.profiles.acl;
+package com.acme.center.platform.profiles.application.acl;
 
 import com.acme.center.platform.profiles.domain.model.commands.CreateProfileCommand;
 import com.acme.center.platform.profiles.domain.model.queries.GetProfileByEmailQuery;
