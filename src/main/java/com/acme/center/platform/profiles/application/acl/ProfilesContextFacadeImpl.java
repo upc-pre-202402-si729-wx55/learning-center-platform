@@ -8,16 +8,26 @@ import com.acme.center.platform.profiles.domain.services.ProfileQueryService;
 import com.acme.center.platform.profiles.interfaces.acl.ProfilesContextFacade;
 import org.springframework.stereotype.Service;
 
+/**
+ * Profiles Context Facade Implementation
+ */
 @Service
 public class ProfilesContextFacadeImpl implements ProfilesContextFacade {
     private final ProfileCommandService profileCommandService;
     private final ProfileQueryService profileQueryService;
 
+    /**
+     * Constructor
+     *
+     * @param profileCommandService The {@link ProfileCommandService} instance
+     * @param profileQueryService The {@link ProfileQueryService} instance
+     */
     public ProfilesContextFacadeImpl(ProfileCommandService profileCommandService, ProfileQueryService profileQueryService) {
         this.profileCommandService = profileCommandService;
         this.profileQueryService = profileQueryService;
     }
 
+    // inherited javadoc
     public Long createProfile(
             String firstName,
             String lastName,
@@ -40,6 +50,7 @@ public class ProfilesContextFacadeImpl implements ProfilesContextFacade {
         return profile.isEmpty() ? Long.valueOf(0L) : profile.get().getId();
     }
 
+    // inherited javadoc
     public Long fetchProfileIdByEmail(String email) {
         var getProfileByEmailQuery = new GetProfileByEmailQuery(new EmailAddress(email));
         var profile = profileQueryService.handle(getProfileByEmailQuery);
