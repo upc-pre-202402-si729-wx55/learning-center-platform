@@ -1,6 +1,5 @@
 package com.acme.center.platform.learning.interfaces.rest;
 
-import com.acme.center.platform.learning.domain.model.commands.CreateCourseCommand;
 import com.acme.center.platform.learning.domain.model.commands.DeleteCourseCommand;
 import com.acme.center.platform.learning.domain.model.queries.GetAllCoursesQuery;
 import com.acme.center.platform.learning.domain.model.queries.GetCourseByIdQuery;
