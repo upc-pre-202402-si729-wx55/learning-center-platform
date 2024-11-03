@@ -5,6 +5,9 @@ import com.acme.center.platform.learning.domain.model.valueobjects.AcmeStudentRe
 import com.acme.center.platform.learning.domain.services.EnrollmentQueryService;
 import com.acme.center.platform.learning.interfaces.rest.resources.EnrollmentResource;
 import com.acme.center.platform.learning.interfaces.rest.transform.EnrollmentResourceFromEntityAssembler;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +56,9 @@ public class StudentEnrollmentsController {
      * @see EnrollmentResource
      */
     @GetMapping
+    @Operation(summary = "Get all enrollments for a student")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Enrollments found")})
     public ResponseEntity<List<EnrollmentResource>> getEnrollmentsForStudentWithStudentRecordId(@PathVariable String studentRecordId) {
         var acmeStudentRecordId = new AcmeStudentRecordId(studentRecordId);
         var getAllEnrollmentsByAcmeStudentRecordIdQuery = new GetAllEnrollmentsByAcmeStudentRecordIdQuery(acmeStudentRecordId);
