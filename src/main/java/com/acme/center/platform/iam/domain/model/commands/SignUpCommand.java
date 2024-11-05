@@ -1,5 +1,6 @@
 package com.acme.center.platform.iam.domain.model.commands;
 
+import com.acme.center.platform.iam.domain.model.entities.Role;
 import com.acme.center.platform.iam.domain.model.valueobjects.Roles;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
  *     It contains the username, password and roles of the new user.
  * </p>
  */
-public record SignUpCommand(String username, String password, List<Roles> roles) {
+public record SignUpCommand(String username, String password, List<Role> roles) {
 }
