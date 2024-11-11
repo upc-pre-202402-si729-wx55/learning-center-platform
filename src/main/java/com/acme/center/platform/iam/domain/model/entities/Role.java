@@ -19,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
@@ -68,5 +69,16 @@ public class Role {
      */
     public static List<Role> validateRoleSet(List<Role> roles) {
         return roles == null || roles.isEmpty() ? List.of(getDefaultRole()) : roles;
+    }
+
+    /**
+     * Get String Name
+     * <p>
+     *     Returns the name of the role as a string.
+     * </p>
+     * @return The name of the role as a string.
+     */
+    public String getStringName() {
+        return name.name();
     }
 }

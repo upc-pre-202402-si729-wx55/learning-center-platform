@@ -8,6 +8,6 @@ package com.acme.center.platform.iam.domain.model.valueobjects;
  */
 public enum Roles {
     ROLE_USER,
-    ROLES_ADMIN,
+    ROLE_ADMIN,
     ROLE_INSTRUCTOR
 }
